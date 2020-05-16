@@ -47,7 +47,7 @@ describe('BankAccount', () => {
         bankAccount2.append(75);
         bankAccount1.merge(bankAccount2);
         it('Should merge accounts and show correct history', () => {
-            assert.deepEqual([{operation: "append", amount: 100}, {operation: "append", amount: 75}], bankAccount1.getHistory());
+            assert.deepEqual([{operation: "append", amount: 100}, {operation: "append", amount: 75}, {operation: "merge", amount: 75}], bankAccount1.getHistory());
         })
     })
 
@@ -58,7 +58,7 @@ describe('BankAccount', () => {
         bankAccount2.substract(75);
         bankAccount1.merge(bankAccount2);
         it('Should merge accounts and show correct history', () => {
-            assert.deepEqual([{operation: "append", amount: 100}, {operation: "substract", amount: 75}], bankAccount1.getHistory());
+            assert.deepEqual([{operation: "append", amount: 100}, {operation: "substract", amount: 75}, {operation: "merge", amount: -75}], bankAccount1.getHistory());
         })
     })
 

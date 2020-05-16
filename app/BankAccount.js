@@ -46,6 +46,7 @@ class BankAccount {
         //Si el account balance es positivo se suma por tener signo +
         //Si el account balance es negativo se resta por tener signo -
         this.balance = this.balance + account.balance;
+        this.history.push({operation: "merge", amount: account.balance});
     }
 }
 
